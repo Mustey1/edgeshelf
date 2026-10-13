@@ -63,6 +63,14 @@ internal static class Program
                 Invoke(window, "SelectSection", section, false);
                 Check(Find<TextBlock>(window, "SectionTitle").Text == section, $"{section} navigation");
             }
+            Check(Find<Grid>(window, "ContentArea").Margin.Left == 22
+                && Find<Grid>(window, "ContentArea").Margin.Right == 22,
+                "Content uses equal left and right padding");
+            foreach (var listName in new[] { "ShelfList", "ClipboardList", "SnippetsList", "CalendarList" })
+                Check(Find<ListBox>(window, listName).Margin.Right == -8,
+                    $"{listName} keeps cards aligned while placing its scrollbar outside");
+            Check(Find<ScrollViewer>(window, "SettingsView").Margin.Right == -8,
+                "Settings uses the same content and scrollbar alignment");
 
             Invoke(window, "SelectSection", "Clipboard", false);
             Check(Find<Button>(window, "ClipboardClearButton") is { Content: "Clear", Visibility: Visibility.Visible },

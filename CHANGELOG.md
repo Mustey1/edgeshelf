@@ -2,6 +2,11 @@
 
 All notable changes to Edge Shelf are documented in this file.
 
+## 0.1.1
+
+- aligned the left and right content spacing across all tabs;
+- kept slim scrollbars outside the card width so cards remain consistent.
+
 ## 0.1.0
 
 Initial public MVP:

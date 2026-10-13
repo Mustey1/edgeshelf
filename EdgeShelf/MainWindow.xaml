@@ -293,7 +293,7 @@
                         </Button>
                     </StackPanel>
                 </Border>
-                <Grid Grid.Column="1" Margin="22,22,20,20">
+                <Grid x:Name="ContentArea" Grid.Column="1" Margin="22,22,22,20">
                     <Grid.RowDefinitions>
                         <RowDefinition Height="Auto"/>
                         <RowDefinition Height="*"/>
@@ -310,7 +310,7 @@
                         <TextBlock x:Name="ShelfEmpty" Text="Drop files or images here"
                                    Foreground="#FF9EABB9" FontSize="14" TextAlignment="Center"
                                    VerticalAlignment="Center" TextWrapping="Wrap"/>
-                        <ListBox x:Name="ShelfList" Margin="0,0,-24,0" Background="Transparent" BorderThickness="0"
+                        <ListBox x:Name="ShelfList" Margin="0,0,-8,0" Background="Transparent" BorderThickness="0"
                                  Foreground="#FFF2F4F7" ScrollViewer.HorizontalScrollBarVisibility="Disabled" ScrollViewer.VerticalScrollBarVisibility="Visible" ItemContainerStyle="{StaticResource CardListItem}"
                                  PreviewMouseLeftButtonDown="ShelfList_MouseDown"
                                  PreviewMouseMove="ShelfList_MouseMove"
@@ -394,7 +394,7 @@
                             <TextBlock x:Name="ClipboardEmpty" Text="Clipboard history is empty"
                                        Foreground="#FF9EABB9" FontSize="14" TextAlignment="Center"
                                        VerticalAlignment="Center" TextWrapping="Wrap"/>
-                            <ListBox x:Name="ClipboardList" Margin="0,0,-24,0" Background="Transparent" BorderThickness="0"
+                            <ListBox x:Name="ClipboardList" Margin="0,0,-8,0" Background="Transparent" BorderThickness="0"
                                      Foreground="#FFF2F4F7" ScrollViewer.HorizontalScrollBarVisibility="Disabled" ScrollViewer.VerticalScrollBarVisibility="Visible" ItemContainerStyle="{StaticResource CardListItem}"
                                      PreviewMouseLeftButtonDown="ClipboardList_MouseDown"
                                      PreviewMouseMove="ClipboardList_MouseMove"
@@ -531,7 +531,7 @@
                             <TextBlock x:Name="SnippetsEmpty" Text="No snippets yet"
                                        Foreground="#FF9EABB9" FontSize="14" TextAlignment="Center"
                                        VerticalAlignment="Center" TextWrapping="Wrap"/>
-                            <ListBox x:Name="SnippetsList" Margin="0,0,-24,0" Background="Transparent" BorderThickness="0"
+                            <ListBox x:Name="SnippetsList" Margin="0,0,-8,0" Background="Transparent" BorderThickness="0"
                                      Foreground="#FFF2F4F7" ScrollViewer.HorizontalScrollBarVisibility="Disabled" ScrollViewer.VerticalScrollBarVisibility="Visible" ItemContainerStyle="{StaticResource CardListItem}"
                                      PreviewMouseLeftButtonUp="SnippetsList_Click"
                                      PreviewMouseRightButtonUp="SnippetsList_RightClick">
@@ -639,7 +639,7 @@
                                 <TextBlock x:Name="CalendarEmpty" Text="No more meetings today."
                                            Foreground="#FF9EABB9" FontSize="14" TextAlignment="Center"
                                            VerticalAlignment="Center" TextWrapping="Wrap"/>
-                                <ListBox x:Name="CalendarList" Margin="0,0,-24,0" Background="Transparent" BorderThickness="0"
+                                <ListBox x:Name="CalendarList" Margin="0,0,-8,0" Background="Transparent" BorderThickness="0"
                                          Foreground="#FFF2F4F7" ScrollViewer.HorizontalScrollBarVisibility="Disabled" ScrollViewer.VerticalScrollBarVisibility="Visible" ItemContainerStyle="{StaticResource CardListItem}">
 
                                     <ListBox.ItemTemplate>
@@ -687,10 +687,10 @@
                             </Grid>
                         </Grid>
                     </Grid>
-                    <ScrollViewer x:Name="SettingsView" Grid.Row="1" Margin="0,18,0,0"
+                    <ScrollViewer x:Name="SettingsView" Grid.Row="1" Margin="0,18,-8,0"
                                   Visibility="Collapsed" VerticalScrollBarVisibility="Auto"
                                   LostKeyboardFocus="TextInput_LostFocus">
-                        <StackPanel Margin="0,0,8,0">
+                        <StackPanel>
                             <TextBlock Text="General" Foreground="#FFF2F4F7" FontWeight="SemiBold" FontSize="13"/>
                             <CheckBox x:Name="StartWithWindowsCheck" Content="Start with Windows"
                                       Foreground="#FFB8C4D0" Margin="0,11,0,12"/>
