@@ -2,6 +2,11 @@
 
 All notable changes to Edge Shelf are documented in this file.
 
+## 0.1.2
+
+- replaced temporary interface icon geometry with a consistent Lucide icon set;
+- restored crisp 16 px navigation and clipboard icons.
+
 ## 0.1.1
 
 - aligned the left and right content spacing across all tabs;

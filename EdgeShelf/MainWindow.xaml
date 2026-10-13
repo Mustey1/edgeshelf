@@ -173,7 +173,7 @@
         <Style x:Key="NavIconStroke" TargetType="Path">
             <Setter Property="Fill" Value="{x:Null}"/>
             <Setter Property="Stroke" Value="{Binding Foreground, RelativeSource={RelativeSource AncestorType=Button}}"/>
-            <Setter Property="StrokeThickness" Value="1.5"/>
+            <Setter Property="StrokeThickness" Value="2"/>
             <Setter Property="StrokeStartLineCap" Value="Round"/>
             <Setter Property="StrokeEndLineCap" Value="Round"/>
             <Setter Property="StrokeLineJoin" Value="Round"/>
@@ -181,7 +181,7 @@
         <Style x:Key="ClipboardIconStroke" TargetType="Path">
             <Setter Property="Fill" Value="{x:Null}"/>
             <Setter Property="Stroke" Value="#FFB8CBE0"/>
-            <Setter Property="StrokeThickness" Value="1.5"/>
+            <Setter Property="StrokeThickness" Value="2"/>
             <Setter Property="StrokeStartLineCap" Value="Round"/>
             <Setter Property="StrokeEndLineCap" Value="Round"/>
             <Setter Property="StrokeLineJoin" Value="Round"/>
@@ -252,42 +252,46 @@
                         <Button x:Name="ShelfButton" Tag="Shelf" ToolTip="Shelf" Click="Section_Click" Style="{StaticResource NavButton}">
                             <Viewbox Width="16" Height="16" Stretch="Uniform">
                             <Canvas Width="24" Height="24">
-                                <Path Style="{StaticResource NavIconStroke}" Data="M3 4 H15 V16 H3 Z"/>
-                                <Path Style="{StaticResource NavIconStroke}" Data="M7 8 H21 V20 H7 Z"/>
-                                <Path Style="{StaticResource NavIconStroke}" Data="M9 17 L13 13 L16 16 L18 14 L21 17"/>
-                                <Path Style="{StaticResource NavIconStroke}" Data="M11 11 A1 1 0 1 1 9 11 A1 1 0 1 1 11 11"/>
+                                <Path Style="{StaticResource NavIconStroke}" Data="M22 11 L20.704 9.704 A2.4 2.4 0 0 0 17.296 9.704 L11 16"/>
+                                <Path Style="{StaticResource NavIconStroke}" Data="M4 8 A2 2 0 0 0 2 10 V20 A2 2 0 0 0 4 22 H14 A2 2 0 0 0 16 20"/>
+                                <Path Style="{StaticResource NavIconStroke}" Data="M14 7 A1 1 0 1 1 12 7 A1 1 0 1 1 14 7"/>
+                                <Path Style="{StaticResource NavIconStroke}" Data="M10 2 H20 A2 2 0 0 1 22 4 V14 A2 2 0 0 1 20 16 H10 A2 2 0 0 1 8 14 V4 A2 2 0 0 1 10 2 Z"/>
                             </Canvas>
                             </Viewbox>
                         </Button>
                         <Button x:Name="ClipboardButton" Tag="Clipboard" ToolTip="Clipboard" Click="Section_Click" Style="{StaticResource NavButton}">
                             <Viewbox Width="16" Height="16" Stretch="Uniform">
                             <Canvas Width="24" Height="24">
-                                <Path Style="{StaticResource NavIconStroke}" Data="M7 5 H17 V21 H7 Z"/>
-                                <Path Style="{StaticResource NavIconStroke}" Data="M9 3 H15 V7 H9 Z"/>
-                                <Path Style="{StaticResource NavIconStroke}" Data="M10 11 H14"/>
-                                <Path Style="{StaticResource NavIconStroke}" Data="M10 14 H14"/>
-                                <Path Style="{StaticResource NavIconStroke}" Data="M10 17 H14"/>
-                                <Path Style="{StaticResource NavIconStroke}" Data="M5 7 H7 V19 H5 Z"/>
-                                <Path Style="{StaticResource NavIconStroke}" Data="M17 7 H19 V19 H17"/>
+                                <Path Style="{StaticResource NavIconStroke}" Data="M9 2 H15 A1 1 0 0 1 16 3 V5 A1 1 0 0 1 15 6 H9 A1 1 0 0 1 8 5 V3 A1 1 0 0 1 9 2 Z"/>
+                                <Path Style="{StaticResource NavIconStroke}" Data="M16 4 H18 A2 2 0 0 1 20 6 V20 A2 2 0 0 1 18 22 H6 A2 2 0 0 1 4 20 V6 A2 2 0 0 1 6 4 H8"/>
+                                <Path Style="{StaticResource NavIconStroke}" Data="M12 11 H16"/>
+                                <Path Style="{StaticResource NavIconStroke}" Data="M12 16 H16"/>
+                                <Path Style="{StaticResource NavIconStroke}" Data="M8 11 H8.01"/>
+                                <Path Style="{StaticResource NavIconStroke}" Data="M8 16 H8.01"/>
                             </Canvas>
                             </Viewbox>
                         </Button>
                         <Button x:Name="SnippetsButton" Tag="Snippets" ToolTip="Snippets" Click="Section_Click" Style="{StaticResource NavButton}">
                             <Viewbox Width="16" Height="16" Stretch="Uniform">
                             <Canvas Width="24" Height="24">
-                                <Path Style="{StaticResource NavIconStroke}" Data="M6 17 L5 21 L9 20 L20 9 L17 6 Z"/>
-                                <Path Style="{StaticResource NavIconStroke}" Data="M4 22 H20"/>
+                                <Path Style="{StaticResource NavIconStroke}" Data="M13 21 H21"/>
+                                <Path Style="{StaticResource NavIconStroke}" Data="M21.174 6.812 A1 1 0 0 0 17.188 2.825 L3.842 16.174 A2 2 0 0 0 3.342 17.004 L2.021 21.356 A0.5 0.5 0 0 0 2.644 21.978 L6.997 20.658 A2 2 0 0 0 7.827 20.161 Z"/>
                             </Canvas>
                             </Viewbox>
                         </Button>
                         <Button x:Name="CalendarButton" Tag="Calendar" ToolTip="Calendar" Click="Section_Click" Style="{StaticResource NavButton}">
                             <Viewbox Width="16" Height="16" Stretch="Uniform">
                             <Canvas Width="24" Height="24">
-                                <Path Style="{StaticResource NavIconStroke}" Data="M4 6 H20 V21 H4 Z"/>
-                                <Path Style="{StaticResource NavIconStroke}" Data="M4 10 H20"/>
-                                <Path Style="{StaticResource NavIconStroke}" Data="M8 3 V7"/>
-                                <Path Style="{StaticResource NavIconStroke}" Data="M16 3 V7"/>
-                                <Path Style="{StaticResource NavIconStroke}" Data="M12 13 L13.2 15.4 L16 15.8 L14 17.7 L14.5 20.5 L12 19.2 L9.5 20.5 L10 17.7 L8 15.8 L10.8 15.4 Z"/>
+                                <Path Style="{StaticResource NavIconStroke}" Data="M8 2 V5"/>
+                                <Path Style="{StaticResource NavIconStroke}" Data="M16 2 V5"/>
+                                <Path Style="{StaticResource NavIconStroke}" Data="M5 3 H19 A2 2 0 0 1 21 5 V19 A2 2 0 0 1 19 21 H5 A2 2 0 0 1 3 19 V5 A2 2 0 0 1 5 3 Z"/>
+                                <Path Style="{StaticResource NavIconStroke}" Data="M3 9 H21"/>
+                                <Path Style="{StaticResource NavIconStroke}" Data="M8 13 H8.01"/>
+                                <Path Style="{StaticResource NavIconStroke}" Data="M12 13 H12.01"/>
+                                <Path Style="{StaticResource NavIconStroke}" Data="M16 13 H16.01"/>
+                                <Path Style="{StaticResource NavIconStroke}" Data="M8 17 H8.01"/>
+                                <Path Style="{StaticResource NavIconStroke}" Data="M12 17 H12.01"/>
+                                <Path Style="{StaticResource NavIconStroke}" Data="M16 17 H16.01"/>
                             </Canvas>
                             </Viewbox>
                         </Button>
@@ -375,11 +379,11 @@
                                                     Click="ShelfDelete_Click">
                                                 <Viewbox Width="15" Height="15" Stretch="Uniform">
                                                     <Canvas Width="24" Height="24">
-                                                        <Path Style="{StaticResource NavIconStroke}" Data="M7 7 H17 V21 H7 Z"/>
-                                                        <Path Style="{StaticResource NavIconStroke}" Data="M4 7 H20"/>
-                                                        <Path Style="{StaticResource NavIconStroke}" Data="M9 4 H15 V7 H9 Z"/>
-                                                        <Path Style="{StaticResource NavIconStroke}" Data="M10 11 V17"/>
-                                                        <Path Style="{StaticResource NavIconStroke}" Data="M14 11 V17"/>
+                                                        <Path Style="{StaticResource NavIconStroke}" Data="M3 6 H21"/>
+                                                        <Path Style="{StaticResource NavIconStroke}" Data="M8 6 V4 H16 V6"/>
+                                                        <Path Style="{StaticResource NavIconStroke}" Data="M19 6 L18 20 H6 L5 6"/>
+                                                        <Path Style="{StaticResource NavIconStroke}" Data="M10 11 V16"/>
+                                                        <Path Style="{StaticResource NavIconStroke}" Data="M14 11 V16"/>
                                                     </Canvas>
                                                 </Viewbox>
                                             </Button>
@@ -439,9 +443,9 @@
                                                                 </Style>
                                                             </Viewbox.Style>
                                                             <Canvas Width="24" Height="24">
-                                                                <Path Style="{StaticResource ClipboardIconStroke}" Data="M4 6 H20 V18 H4 Z"/>
-                                                                <Path Style="{StaticResource ClipboardIconStroke}" Data="M9 9 V15"/>
-                                                                <Path Style="{StaticResource ClipboardIconStroke}" Data="M7 9 H11 M7 15 H11"/>
+                                                                <Path Style="{StaticResource ClipboardIconStroke}" Data="M12 4 V20"/>
+                                                                <Path Style="{StaticResource ClipboardIconStroke}" Data="M4 7 V5 A1 1 0 0 1 5 4 H19 A1 1 0 0 1 20 5 V7"/>
+                                                                <Path Style="{StaticResource ClipboardIconStroke}" Data="M9 20 H15"/>
                                                             </Canvas>
                                                         </Viewbox>
                                                         <Viewbox Width="20" Height="20" Stretch="Uniform">
@@ -456,8 +460,8 @@
                                                                 </Style>
                                                             </Viewbox.Style>
                                                             <Canvas Width="24" Height="24">
-                                                                <Path Style="{StaticResource ClipboardIconStroke}" Data="M10 8 H8 A4 4 0 0 0 8 16 H10"/>
-                                                                <Path Style="{StaticResource ClipboardIconStroke}" Data="M14 8 H16 A4 4 0 0 1 16 16 H14 M9 12 H15"/>
+                                                                <Path Style="{StaticResource ClipboardIconStroke}" Data="M10 13 A5 5 0 0 0 17.54 13.54 L20.54 10.54 A5 5 0 0 0 13.47 3.47 L11.75 5.18"/>
+                                                                <Path Style="{StaticResource ClipboardIconStroke}" Data="M14 11 A5 5 0 0 0 6.46 10.46 L3.46 13.46 A5 5 0 0 0 10.53 20.53 L12.24 18.82"/>
                                                             </Canvas>
                                                         </Viewbox>
                                                         <Image Source="{Binding Preview}" Stretch="UniformToFill">
@@ -497,11 +501,11 @@
                                                         Click="ClipboardDelete_Click">
                                                     <Viewbox Width="15" Height="15" Stretch="Uniform">
                                                         <Canvas Width="24" Height="24">
-                                                            <Path Style="{StaticResource NavIconStroke}" Data="M7 7 H17 V21 H7 Z"/>
-                                                            <Path Style="{StaticResource NavIconStroke}" Data="M4 7 H20"/>
-                                                            <Path Style="{StaticResource NavIconStroke}" Data="M9 4 H15 V7 H9 Z"/>
-                                                            <Path Style="{StaticResource NavIconStroke}" Data="M10 11 V17"/>
-                                                            <Path Style="{StaticResource NavIconStroke}" Data="M14 11 V17"/>
+                                                            <Path Style="{StaticResource NavIconStroke}" Data="M3 6 H21"/>
+                                                            <Path Style="{StaticResource NavIconStroke}" Data="M8 6 V4 H16 V6"/>
+                                                            <Path Style="{StaticResource NavIconStroke}" Data="M19 6 L18 20 H6 L5 6"/>
+                                                            <Path Style="{StaticResource NavIconStroke}" Data="M10 11 V16"/>
+                                                            <Path Style="{StaticResource NavIconStroke}" Data="M14 11 V16"/>
                                                         </Canvas>
                                                     </Viewbox>
                                                 </Button>

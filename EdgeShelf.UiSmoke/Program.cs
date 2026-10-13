@@ -45,8 +45,8 @@ internal static class Program
                 Check(Find<Button>(window, name).ActualHeight == 44, $"{name} is visible in the navigation rail");
             foreach (var (name, paths) in new[]
             {
-                ("ShelfButton", 4), ("ClipboardButton", 7),
-                ("SnippetsButton", 2), ("CalendarButton", 5)
+                ("ShelfButton", 4), ("ClipboardButton", 6),
+                ("SnippetsButton", 2), ("CalendarButton", 10)
             })
             {
                 var button = Find<Button>(window, name);
@@ -117,10 +117,10 @@ internal static class Program
                 "Clipboard card has a hover delete button");
             Check(Descendants<Viewbox>(linkCard!).Count(icon => icon.Visibility == Visibility.Visible
                 && icon.Child is Canvas canvas && canvas.Children.Count == 2) == 1,
-                "Links use the supplied chain icon");
+                "Links use the Lucide link icon");
             Check(Descendants<Viewbox>(textCard!).Count(icon => icon.Visibility == Visibility.Visible
                 && icon.Child is Canvas canvas && canvas.Children.Count == 3) == 1,
-                "Text uses the supplied typing icon");
+                "Text uses the Lucide type icon");
             var imageWidth = Descendants<Border>(imageCard!).Single(border => border.Height == 70).ActualWidth;
             var linkWidth = Descendants<Border>(linkCard!).Single(border => border.Height == 70).ActualWidth;
             Check(imageWidth > 200 && Math.Abs(imageWidth - linkWidth) < 0.5
