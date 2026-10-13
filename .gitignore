@@ -1,0 +1,17 @@
+**/bin/
+**/obj/
+.vs/
+.vscode/
+.idea/
+.tools/
+.dotnet/
+dotnet-install.ps1
+TestResults/
+*.user
+*.suo
+*.nupkg
+*.snupkg
+artifacts/
+
+# Local design-source copies; the application uses project-owned XAML geometry.
+EdgeShelf/Assets/Icons/

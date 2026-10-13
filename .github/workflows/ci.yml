@@ -1,0 +1,28 @@
+name: CI
+
+on:
+  push:
+  pull_request:
+
+jobs:
+  build-and-smoke-test:
+    runs-on: windows-latest
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-dotnet@v4
+        with:
+          dotnet-version: 8.0.x
+
+      - name: Restore
+        run: dotnet restore EdgeShelf/EdgeShelf.csproj --configfile NuGet.Config
+
+      - name: Build
+        run: dotnet build EdgeShelf/EdgeShelf.csproj --configuration Release --no-restore
+
+      - name: Persistence smoke tests
+        run: dotnet run --project EdgeShelf.Smoke/EdgeShelf.Smoke.csproj --configuration Release
+
+      - name: WPF UI smoke tests
+        run: dotnet run --project EdgeShelf.UiSmoke/EdgeShelf.UiSmoke.csproj --configuration Release

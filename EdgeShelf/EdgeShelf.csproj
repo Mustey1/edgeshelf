@@ -1,0 +1,20 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net8.0-windows</TargetFramework>
+    <UseWPF>true</UseWPF>
+    <UseWindowsForms>true</UseWindowsForms>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <ApplicationIcon>Assets\EdgeShelf.ico</ApplicationIcon>
+    <Version>0.1.0</Version>
+    <AssemblyName>EdgeShelf</AssemblyName>
+    <Product>Edge Shelf</Product>
+    <Authors>Edge Shelf contributors</Authors>
+    <Description>A lightweight Windows shelf for files, clipboard history, snippets, and calendar meetings.</Description>
+    <Copyright>Copyright © 2026 Edge Shelf contributors</Copyright>
+  </PropertyGroup>
+  <ItemGroup>
+    <PackageReference Include="Ical.Net" Version="5.2.3" />
+  </ItemGroup>
+</Project>

@@ -1,0 +1,48 @@
+name: Release
+
+on:
+  push:
+    tags:
+      - "v*"
+
+permissions:
+  contents: write
+
+jobs:
+  build-release:
+    runs-on: windows-latest
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-dotnet@v4
+        with:
+          dotnet-version: 8.0.x
+
+      - name: Persistence smoke tests
+        run: dotnet run --project EdgeShelf.Smoke/EdgeShelf.Smoke.csproj --configuration Release
+
+      - name: WPF UI smoke tests
+        run: dotnet run --project EdgeShelf.UiSmoke/EdgeShelf.UiSmoke.csproj --configuration Release
+
+      - name: Install Inno Setup
+        run: choco install innosetup --no-progress -y
+
+      - name: Build release artifacts
+        shell: pwsh
+        run: |
+          $version = "${{ github.ref_name }}".TrimStart('v')
+          .\scripts\build-release.ps1 -Version $version
+
+      - name: Publish GitHub release
+        shell: pwsh
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          $version = "${{ github.ref_name }}".TrimStart('v')
+          gh release create "${{ github.ref_name }}" `
+            ".\artifacts\EdgeShelf-Portable-$version.zip" `
+            ".\artifacts\installer\EdgeShelf-Setup-$version.exe" `
+            ".\artifacts\SHA256SUMS.txt" `
+            --title "Edge Shelf $version" `
+            --generate-notes
