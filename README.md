@@ -11,6 +11,16 @@ Edge Shelf has four main sections: **Shelf, Clipboard, Snippets, and Calendar**.
 
 [Download the latest Windows release](https://github.com/Mustey1/edgeshelf/releases/latest)
 
+## Screenshots
+
+| Shelf | Clipboard |
+| --- | --- |
+| ![Edge Shelf Shelf tab](docs/screenshots/shelf.png) | ![Edge Shelf Clipboard tab](docs/screenshots/clipboard.png) |
+
+| Snippets | Calendar |
+| --- | --- |
+| ![Edge Shelf Snippets tab](docs/screenshots/snippets.png) | ![Edge Shelf Calendar tab](docs/screenshots/calendar.png) |
+
 ## Why I built this
 
 I first saw a similar utility on Instagram: someone had vibe-coded a small
