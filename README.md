@@ -11,16 +11,6 @@ Edge Shelf has four main sections: **Shelf, Clipboard, Snippets, and Calendar**.
 
 [Download the latest Windows release](https://github.com/Mustey1/edgeshelf/releases/latest)
 
-## Screenshots
-
-| Shelf | Clipboard |
-| --- | --- |
-| ![Edge Shelf Shelf tab](docs/screenshots/shelf.png) | ![Edge Shelf Clipboard tab](docs/screenshots/clipboard.png) |
-
-| Snippets | Calendar |
-| --- | --- |
-| ![Edge Shelf Snippets tab](docs/screenshots/snippets.png) | ![Edge Shelf Calendar tab](docs/screenshots/calendar.png) |
-
 ## Why I built this
 
 I first saw a similar utility on Instagram: someone had vibe-coded a small
@@ -43,6 +33,8 @@ That is why Edge Shelf exists.
 
 ## Shelf
 
+![Edge Shelf Shelf tab](docs/screenshots/shelf.png)
+
 Shelf automatically keeps copied screenshots in one place. You can take
 multiple screenshots one after another without stopping to paste each one
 immediately. They are saved locally and remain available until you remove them.
@@ -62,6 +54,8 @@ The idea is simple: **capture first, use later**.
 
 ## Clipboard
 
+![Edge Shelf Clipboard tab](docs/screenshots/clipboard.png)
+
 Clipboard keeps a local history of copied content, including:
 
 - text;
@@ -75,6 +69,8 @@ Instead of losing whatever you copied five minutes ago, it remains available in
 one place.
 
 ## Snippets
+
+![Edge Shelf Snippets tab](docs/screenshots/snippets.png)
 
 Snippets are for information you use repeatedly, such as:
 
@@ -90,6 +86,8 @@ need to copy its value instead of typing it again. Snippets can also be edited,
 duplicated, categorized, searched, and deleted.
 
 ## Calendar
+
+![Edge Shelf Calendar tab](docs/screenshots/calendar.png)
 
 Calendar provides a simple overview of your upcoming meetings for the day.
 Connect Google Calendar through a private iCal link or read-only OAuth and see
