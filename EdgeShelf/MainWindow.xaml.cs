@@ -323,6 +323,7 @@ public partial class MainWindow : Window
         if (section is not ("Shelf" or "Clipboard" or "Snippets" or "Calendar")) section = "Shelf";
         SectionTitle.Text = section;
         ShelfView.Visibility = section == "Shelf" ? Visibility.Visible : Visibility.Collapsed;
+        ShelfClearButton.Visibility = section == "Shelf" ? Visibility.Visible : Visibility.Collapsed;
         ClipboardView.Visibility = section == "Clipboard" ? Visibility.Visible : Visibility.Collapsed;
         ClipboardClearButton.Visibility = section == "Clipboard" ? Visibility.Visible : Visibility.Collapsed;
         SnippetsView.Visibility = section == "Snippets" ? Visibility.Visible : Visibility.Collapsed;
@@ -363,6 +364,7 @@ public partial class MainWindow : Window
     {
         Open();
         ShelfView.Visibility = Visibility.Collapsed;
+        ShelfClearButton.Visibility = Visibility.Collapsed;
         ClipboardView.Visibility = Visibility.Collapsed;
         ClipboardClearButton.Visibility = Visibility.Collapsed;
         SnippetsView.Visibility = Visibility.Collapsed;
@@ -784,6 +786,12 @@ public partial class MainWindow : Window
     {
         if (ClipboardEmpty is null || ClipboardList is null) return;
         ClipboardEmpty.Visibility = _clipboard.Items.Count == 0 ? Visibility.Visible : Visibility.Collapsed;
+    }
+
+    private void ShelfClear_Click(object sender, RoutedEventArgs e)
+    {
+        _shelf.Clear();
+        UpdateShelfEmpty();
     }
 
     private void ClipboardClear_Click(object sender, RoutedEventArgs e)

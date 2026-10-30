@@ -32,6 +32,12 @@ try
     shelf.Remove(imageItem);
     Check(!File.Exists(imageItem.Path), "Removing an internal image deletes its local file");
     Check(new ShelfStore(storage).Items.Count == 1, "Removal survives restart");
+    Check(shelf.AddImage(image), "Another image is saved before clearing Shelf");
+    var clearedImagePath = shelf.Items.Single(item => item.IsInternal).Path;
+    Check(shelf.Clear(), "Shelf can be cleared");
+    Check(Directory.Exists(folder) && !File.Exists(clearedImagePath)
+        && new ShelfStore(storage).Items.Count == 0,
+        "Clearing Shelf keeps external items and removes internal files and metadata");
 
     var clipboardRoot = Path.Combine(root, "clipboard-store");
     var clipboard = new ClipboardStore(clipboardRoot) { HistoryLimit = 2 };

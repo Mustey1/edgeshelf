@@ -305,6 +305,10 @@
                     </Grid.RowDefinitions>
                     <Grid>
                         <TextBlock x:Name="SectionTitle" Foreground="#FFF2F4F7" FontSize="17" FontWeight="SemiBold"/>
+                        <Button x:Name="ShelfClearButton" Content="Clear" Visibility="Collapsed"
+                                HorizontalAlignment="Right" VerticalAlignment="Center" Padding="0"
+                                Background="Transparent" BorderThickness="0" Foreground="#FF9CACBD"
+                                FontSize="11" Cursor="Hand" Click="ShelfClear_Click"/>
                         <Button x:Name="ClipboardClearButton" Content="Clear" Visibility="Collapsed"
                                 HorizontalAlignment="Right" VerticalAlignment="Center" Padding="0"
                                 Background="Transparent" BorderThickness="0" Foreground="#FF9CACBD"

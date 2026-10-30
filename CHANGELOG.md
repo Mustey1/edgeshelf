@@ -2,6 +2,12 @@
 
 All notable changes to Edge Shelf are documented in this file.
 
+## 0.1.3
+
+- added a **Clear** action to the Shelf header;
+- clearing Shelf removes its saved internal files while preserving original
+  external files and folders.
+
 ## 0.1.2
 
 - replaced temporary interface icon geometry with a consistent Lucide icon set;

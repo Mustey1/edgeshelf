@@ -198,6 +198,25 @@ public sealed class ShelfStore
             Items.Insert(index, item);
             return;
         }
+        DeleteInternalFile(item);
+    }
+
+    public bool Clear()
+    {
+        if (Items.Count == 0) return true;
+        var removed = Items.ToList();
+        Items.Clear();
+        if (!Save())
+        {
+            foreach (var item in removed) Items.Add(item);
+            return false;
+        }
+        foreach (var item in removed) DeleteInternalFile(item);
+        return true;
+    }
+
+    private void DeleteInternalFile(ShelfItem item)
+    {
         if (!item.IsInternal) return;
         try
         {

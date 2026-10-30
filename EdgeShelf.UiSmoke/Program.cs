@@ -72,9 +72,16 @@ internal static class Program
             Check(Find<ScrollViewer>(window, "SettingsView").Margin.Right == -8,
                 "Settings uses the same content and scrollbar alignment");
 
+            Invoke(window, "SelectSection", "Shelf", false);
+            Check(Find<Button>(window, "ShelfClearButton") is { Content: "Clear", Visibility: Visibility.Visible }
+                && Find<Button>(window, "ClipboardClearButton").Visibility == Visibility.Collapsed,
+                "Shelf clear action sits in the header");
+
             Invoke(window, "SelectSection", "Clipboard", false);
             Check(Find<Button>(window, "ClipboardClearButton") is { Content: "Clear", Visibility: Visibility.Visible },
                 "Clipboard clear action sits in the header");
+            Check(Find<Button>(window, "ShelfClearButton").Visibility == Visibility.Collapsed,
+                "Shelf clear action is hidden outside Shelf");
             Check(window.FindName("ClipboardSearch") is null, "Clipboard search field is removed");
             var dragDataMethod = typeof(MainWindow).GetMethod("CreateClipboardDragData",
                 BindingFlags.Static | BindingFlags.NonPublic)!;
@@ -139,8 +146,9 @@ internal static class Program
                 "Scrollbar thumb has rounded corners");
 
             Invoke(window, "OpenSettings");
-            Check(Find<Button>(window, "ClipboardClearButton").Visibility == Visibility.Collapsed,
-                "Clipboard clear action is hidden in settings");
+            Check(Find<Button>(window, "ShelfClearButton").Visibility == Visibility.Collapsed
+                && Find<Button>(window, "ClipboardClearButton").Visibility == Visibility.Collapsed,
+                "Clear actions are hidden in settings");
             Check(Find<ScrollViewer>(window, "SettingsView").Visibility == Visibility.Visible,
                 "Settings page opens");
             Layout(content, 360, 640);

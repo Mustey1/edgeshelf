@@ -146,7 +146,7 @@ dotnet run --project .\EdgeShelf\EdgeShelf.csproj
 Create a self-contained portable ZIP and installer with Inno Setup 6:
 
 ```powershell
-.\scripts\build-release.ps1 -Version 0.1.2
+.\scripts\build-release.ps1 -Version 0.1.3
 ```
 
 Output is written to `artifacts/`. Pass `-SkipInstaller` to build only the
